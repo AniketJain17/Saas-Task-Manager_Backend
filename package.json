@@ -1,0 +1,25 @@
+{
+  "name": "saas-task-manager_backend",
+  "version": "0.0.1",
+  "description": "A multi-tenant SaaS backend for managing tasks, teams, roles, deadlines, and activity logs with authentication, authorization, and scalable architecture.",
+  "homepage": "https://github.com/AniketJain17/Saas-Task-Manager_Backend#readme",
+  "bugs": {
+    "url": "https://github.com/AniketJain17/Saas-Task-Manager_Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AniketJain17/Saas-Task-Manager_Backend.git"
+  },
+  "license": "ISC",
+  "author": "Aniket Jain",
+  "type": "commonjs",
+  "main": "node src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "node src/server.js"  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
