@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../../models/User");
 
 const signup = async (req, res) => {
   try {
@@ -46,4 +46,4 @@ const signup = async (req, res) => {
   }
 };
 
-module.exports = { signup };
+module.exports = signup ;
