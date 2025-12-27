@@ -54,7 +54,6 @@ MONGO_URI=...
 JWT_SECRET=...
 JWT_EXPIRES_IN=1d
 ```
----
 
 ## 1️⃣ Final Folder Structure
 ```bash
@@ -74,7 +73,6 @@ saas-task-manager-backend/
 └── README.md
 ```
 
----
 
 ## ✅ Final Functionality Checklist
 
