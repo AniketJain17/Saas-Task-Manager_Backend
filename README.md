@@ -57,42 +57,48 @@ JWT_EXPIRES_IN=1d
 ---
 
 ##1️⃣ Final Folder Structure
+```bash
 saas-task-manager-backend/
 ├── src/
-│ ├── config/ # DB configuration
-│ ├── controllers/ # Business logic
-│ ├── models/ # Mongoose schemas
-│ ├── routes/ # API routes
-│ ├── middlewares/ # Auth & error handling
-│ ├── utils/ # Shared utilities
-│ ├── app.js # Express app setup
-│ └── server.js # Application entry point
-├── .env
+│   ├── config/          # Database configuration
+│   ├── controllers/     # Business logic
+│   ├── models/          # Mongoose schemas
+│   ├── routes/          # API routes
+│   ├── middlewares/     # Auth & error handling
+│   ├── utils/           # Shared utilities
+│   ├── app.js           # Express app setup
+│   └── server.js        # Application entry point
+├── .env                 # Environment variables
 ├── .gitignore
 ├── package.json
 └── README.md
+```
 
 ---
 
-## Final Functionality Checklist 
-Auth
-  ✅ Password hashing in schema
-  ✅ Signup (no password leakage)
-  ✅ Login with JWT
-  ✅ Token verification middleware
-  ✅ Role-based authorization
+## ✅ Final Functionality Checklist
 
-Tasks
-  ✅ ADMIN / MANAGER can create tasks
-  ✅ MEMBER cannot create tasks
-  ✅ Members update only their tasks
-  ✅ ADMIN-only delete
-  ✅ Pagination implemented
-Logs
-  ✅ Task create/update/delete logged
-  ✅ Logs store actor + timestamp
-  ✅ Logs visible to ADMIN only
-Security
-  ✅ .env ignored
-  ✅ Helmet + CORS enabled
-  ✅ Consistent error responses
+### 🔐 Authentication
+- ✅ Password hashing at schema level
+- ✅ Secure signup (no password leakage)
+- ✅ Login with JWT
+- ✅ Token verification middleware
+- ✅ Role-based authorization
+
+### 📋 Task Management
+- ✅ ADMIN / MANAGER can create tasks
+- ✅ MEMBER cannot create tasks
+- ✅ Members can update only their assigned tasks
+- ✅ ADMIN-only task deletion
+- ✅ Pagination implemented
+
+### 🧾 Activity Logs
+- ✅ Task create / update / delete logged
+- ✅ Logs store actor and timestamp
+- ✅ Logs visible to ADMIN only
+
+### 🛡 Security
+- ✅ Environment variables ignored
+- ✅ Helmet & CORS enabled
+- ✅ Consistent error responses
+
