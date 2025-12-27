@@ -1,5 +1,11 @@
 const express = require('express');
+const helmet = require("helmet");
+const cors = require("cors");
+
 const app = express();
+
+app.use(helmet());
+app.use(cors());
 
 //middleware to parse JSON bodies
 app.use(express.json());
@@ -27,6 +33,14 @@ app.use("/auth", authRoutes); // authentication routes
 const protectedRoutes = require("./routes/protected.routes");
 app.use("/protected", protectedRoutes);
 
+const taskRoutes = require("./routes/task.routes");
+app.use("/tasks", taskRoutes);
+
+const activityRoutes = require("./routes/activity.routes");
+app.use("/activities", activityRoutes);
+
+const errorHandler = require("./middlewares/error.middleware");
+app.use(errorHandler);
 
 
 module.exports = app;
