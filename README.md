@@ -20,10 +20,12 @@ A production-ready backend system for managing tasks in a multi-user environment
 - Helmet & CORS
 
 ## 🔐 Authentication Flow
-1. User signs up (password hashed at schema level)
-2. User logs in and receives JWT
-3. Token verified via middleware
-4. Role-based authorization enforced
+
+1. User signs up → password hashed at schema level
+2. User logs in → receives JWT
+3. Token sent via `Authorization: Bearer <token>`
+4. Middleware verifies token and attaches user context
+5. Role-based guards enforce permissions
 
 ## 👥 Roles & Permissions
 | Role | Capabilities |
@@ -57,29 +59,14 @@ JWT_EXPIRES_IN=1d
 ##1️⃣ Final Folder Structure
 saas-task-manager-backend/
 ├── src/
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── auth.controller.js
-│   │   ├── task.controller.js
-│   │   └── activity.controller.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Task.js
-│   │   └── ActivityLog.js
-│   ├── routes/
-│   │   ├── auth.routes.js
-│   │   ├── task.routes.js
-│   │   ├── activity.routes.js
-│   │   └── health.routes.js
-│   ├── middlewares/
-│   │   ├── auth.middleware.js
-│   │   ├── role.middleware.js
-│   │   └── error.middleware.js
-│   ├── utils/
-│   │   └── activityLogger.js
-│   ├── app.js
-│   └── server.js
+│ ├── config/ # DB configuration
+│ ├── controllers/ # Business logic
+│ ├── models/ # Mongoose schemas
+│ ├── routes/ # API routes
+│ ├── middlewares/ # Auth & error handling
+│ ├── utils/ # Shared utilities
+│ ├── app.js # Express app setup
+│ └── server.js # Application entry point
 ├── .env
 ├── .gitignore
 ├── package.json
