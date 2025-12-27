@@ -47,7 +47,7 @@ npm start
 ```
 ---
 
-##🔐 Environment Variables
+## 🔐 Environment Variables
 ```bash
 PORT=5000
 MONGO_URI=...
@@ -56,7 +56,7 @@ JWT_EXPIRES_IN=1d
 ```
 ---
 
-##1️⃣ Final Folder Structure
+## 1️⃣ Final Folder Structure
 ```bash
 saas-task-manager-backend/
 ├── src/
