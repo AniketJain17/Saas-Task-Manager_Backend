@@ -1,6 +1,7 @@
 const Task = require("../models/Task");
 
 const logActivity = require("../utils/activityLogger");
+const isValidObjectId = require("../utils/validateObjectId");
 
 // 1️⃣ Create Task 
 const createTask = async (req, res) => {
@@ -88,6 +89,10 @@ const getMyTasks = async (req, res) => {
 // 3️⃣ Update Task (CRITICAL LOGIC)
 const updateTask = async (req, res) => {
   try {
+
+        if (!isValidObjectId(req.params.id)) {
+  return res.status(400).json({ message: "Invalid task ID" });
+}
     const task = await Task.findById(req.params.id);
 
     if (!task) {
@@ -143,11 +148,19 @@ await logActivity({
 // 4️⃣ Delete Task
 const deleteTask = async (req, res) => {
   try {
+
+
+        if (!isValidObjectId(req.params.id)) {
+  return res.status(400).json({ message: "Invalid task ID" });
+}
+
     const task = await Task.findById(req.params.id);
 
     if (!task) {
       return res.status(404).json({ message: "Task not found" });
     }
+
+
 
     await logActivity({
   action: "TASK_DELETED",
